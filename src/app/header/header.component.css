@@ -1,0 +1,13 @@
+.logo
+{
+    padding-right: 30px;
+}
+
+.menu-items
+{
+    max-width:100px;
+    width: 100px; 
+    /* margin-left: -8px; */
+    /* margin-top: 24px;
+    overflow: visible; */
+}

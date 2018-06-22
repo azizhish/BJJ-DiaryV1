@@ -1,0 +1,158 @@
+{
+  "master": {
+    "id": 7
+  },
+  "users": [
+    {
+      "id": 1,
+      "firstName": "Hisham",
+      "lastName": "Aziz",
+      "userName": "shammer",
+      "userPass": "shammer",
+      "userSubs": [
+        {
+          "subname": "Triangle",
+          "date": "2018-05-07T13:02:23.447Z"
+        },
+        {
+          "subname": "Kimora",
+          "date": "2018-05-10T15:25:54.546Z"
+        },
+        {
+          "subname": "Triangle",
+          "date": "2018-05-10T15:58:12.052Z"
+        },
+        {
+          "subname": "Armbar",
+          "date": "2018-05-16T16:42:53.562Z"
+        },
+        {
+          "subname": "Armbar",
+          "date": "2018-05-16T16:42:53.562Z"
+        },
+        {
+          "subname": "Armbar",
+          "date": "2018-05-16T16:42:53.562Z"
+        },
+        {
+          "subname": "Armbar",
+          "date": "2018-05-16T16:42:53.562Z"
+        },
+        {
+          "subname": "Kimora",
+          "date": "2018-06-07T15:08:23.159Z"
+        },
+        {
+          "subname": "Kimora",
+          "date": "2018-06-07T15:08:23.159Z"
+        },
+        {
+          "subname": "Triangle",
+          "date": "2018-06-07T15:08:39.023Z"
+        },
+        {
+          "subname": "Triangle",
+          "date": "2018-06-07T15:08:39.023Z"
+        },
+        {
+          "subname": "Triangle",
+          "date": "2018-06-07T15:08:39.023Z"
+        },
+        {
+          "subname": "Triangle",
+          "date": "2018-06-07T15:08:39.023Z"
+        },
+        {
+          "subname": "Triangle",
+          "date": "2018-06-07T15:08:39.023Z"
+        },
+        {
+          "subname": "Triangle",
+          "date": "2018-06-11T20:34:47.486Z"
+        },
+        {
+          "subname": "Kimora",
+          "date": "2018-06-16T10:52:51.531Z"
+        },
+        {
+          "subname": "Kimora",
+          "date": "2018-06-16T10:52:51.531Z"
+        },
+        {
+          "subname": "Kimora",
+          "date": "2018-06-16T10:52:51.531Z"
+        },
+        {
+          "subname": "Armbar",
+          "date": "2018-06-16T10:53:39.273Z"
+        },
+        {
+          "subname": "Armbar",
+          "date": "2018-06-16T10:53:39.273Z"
+        },
+        {
+          "subname": "Armbar",
+          "date": "2018-06-16T10:53:39.273Z"
+        },
+        {
+          "subname": "Armbar",
+          "date": "2018-06-16T10:53:39.273Z"
+        },
+        {
+          "subname": "Armbar",
+          "date": "2018-06-16T10:53:39.273Z"
+        }
+      ],
+      "userTapss": []
+    },
+    {
+      "id": 2,
+      "firstName": "zaen",
+      "lastName": "zaen",
+      "userName": "zaen",
+      "userPass": "shammer",
+      "userSubs": [
+        {
+          "subname": "Triangle",
+          "date": "2018-05-11T11:05:25.090Z"
+        },
+        {
+          "subname": "Kimora",
+          "date": "2018-05-11T11:05:39.280Z"
+        },
+        {
+          "subname": "Triangle",
+          "date": "2018-05-11T11:06:28.435Z"
+        }
+      ],
+      "userTapss": []
+    },
+    {
+      "id": 4,
+      "firstName": "t1",
+      "lastName": "t1",
+      "userName": "t1",
+      "userPass": "t1",
+      "userSubs": [],
+      "userTapss": []
+    },
+    {
+      "id": 5,
+      "firstName": "t1",
+      "lastName": "t1",
+      "userName": "t2",
+      "userPass": "t2",
+      "userSubs": [],
+      "userTapss": []
+    },
+    {
+      "id": 6,
+      "firstName": "Morty",
+      "lastName": "Jones",
+      "userName": "shammer",
+      "userPass": "tester",
+      "userSubs": [],
+      "userTapss": []
+    }
+  ]
+}

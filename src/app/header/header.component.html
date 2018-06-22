@@ -1,0 +1,17 @@
+<div role="heading">
+    <mat-toolbar role="heading" color="primary">
+        <mat-toolbar-row>
+            <span class="logo">BJJ Diary</span>
+            <span>
+                <button mat-button>
+                    Dashboard
+                </button>
+            </span>
+            <button mat-button [matMenuTriggerFor]="menu">Input</button>
+            <mat-menu #menu="matMenu" [overlapTrigger]="false" class="menu-items">
+                <button mat-menu-item>Input Subs</button>
+                <button mat-menu-item>Input Taps</button>
+            </mat-menu>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</div>
