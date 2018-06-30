@@ -8,11 +8,14 @@ import { MatCardModule, MatToolbarModule, MatButtonModule, MatMenuModule } from 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { RestangularModule } from 'ngx-restangular';
+import { User } from '../shared/user';
 
 export function RestangularConfigFactory(RestangularProvider) {
   RestangularProvider.setBaseUrl('http://localhost:3000/');
 }
 //json-server --watch db.json
+
+export { User } from '../shared/user';
 
 @NgModule({
   declarations: [

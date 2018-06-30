@@ -10,6 +10,18 @@ export class User {
     userSubs: Submission[];
     userTaps: Tapout[];
 
+    public constructor(userID: number, firstName: string, lastName: string, userName: string, userPass: string,
+        userSubs: Submission[],userTaps: Tapout[]) {
+        this.userID = userID;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.userName = userName;
+        this.userPass = userPass;
+        this.userSubs = userSubs;
+        this.userTaps = userTaps;
+     }
+
+
     public getFavoriteSub(): string {
         if (this.userSubs.length < 1) {
             return '';
@@ -30,6 +42,15 @@ export class User {
             }
         });
         return favoriteSub;
-     }
+    }
+    
+    /**
+     * reskv
+    console.log("helter");     */
+    public reskv() {
+        console.log("helter");    
+    }
 
- }
+    
+}
+
