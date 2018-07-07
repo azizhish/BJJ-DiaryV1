@@ -1,4 +1,4 @@
 export interface Submission{
-    submission: string;
+    subname: string;
     date: Date | string;
  }

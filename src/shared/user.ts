@@ -26,10 +26,11 @@ export class User {
         if (this.userSubs.length < 1) {
             return '';
         }
+        // console.log("I should get here");
         let tracker = {}, maxCount = 1;
-        let favoriteSub = this.userSubs[0].submission;
+        let favoriteSub = this.userSubs[0].subname;
         this.userSubs.forEach(element => {
-            let subName = element.submission;
+            let subName = element.subname;
             if (subName in tracker) {
                 tracker[subName] += 1;
             }
@@ -41,6 +42,7 @@ export class User {
                 favoriteSub = subName;
             }
         });
+        console.log(favoriteSub);
         return favoriteSub;
     }
     
