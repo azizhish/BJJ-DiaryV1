@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { AppRoutingModule } from './app-routing/app-routing.module';
 
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -8,6 +9,7 @@ import { MatCardModule, MatToolbarModule, MatButtonModule, MatMenuModule } from 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { RestangularModule } from 'ngx-restangular';
+import { LoggingComponent } from './logging/logging.component';
 
 export function RestangularConfigFactory(RestangularProvider) {
   RestangularProvider.setBaseUrl('http://localhost:3000/');
@@ -20,14 +22,16 @@ export { User } from '../shared/user';
   declarations: [
     AppComponent,
     DashboardComponent,
-    HeaderComponent
+    HeaderComponent,
+    LoggingComponent
   ],
   imports: [
     BrowserModule,
     [ MatCardModule, MatToolbarModule, MatButtonModule, MatMenuModule ],
     BrowserAnimationsModule,
     FlexLayoutModule,
-    RestangularModule.forRoot(RestangularConfigFactory)
+    RestangularModule.forRoot(RestangularConfigFactory),
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
