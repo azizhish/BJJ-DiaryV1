@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from "../../shared/user";
 import { UserService } from '../services/user.service';
+import { ActivatedRoute, ParamMap } from '@angular/router';
+import { Observable } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,19 +12,27 @@ import { UserService } from '../services/user.service';
 })
 export class DashboardComponent implements OnInit {
 
-  private user: User;
-  private favoriteSub: string;
+  user: User;
+  favoriteSub: string;
+  numberOfSubs: number;
+  numberOfTaps: number;
 
-  constructor(private userservice: UserService) { }
+  constructor(private userservice: UserService,
+    private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.userservice.getUser(2) //Hard coded the userID for now
-      .subscribe(res => {
-        this.user = new User(res.userID, res.firstName, res.lastName,
-          res.userName, res.userPass, res.userSubs, res.userTaps);
-        this.favoriteSub = this.user.getFavoriteSub();
-      });
-    // console.log("I should get here " + this.favoriteSub);
+    this.route.paramMap.pipe(
+      switchMap((params: ParamMap) =>
+        this.userservice.getUser(parseInt(params.get('id'))))
+    ).subscribe(user => {
+      this.user = new User(user.userID, user.firstName, user.lastName,
+        user.userName, user.userPass, user.userSubs, user.userTaps);
+      this.favoriteSub = this.user.getFavoriteSub();
+      this.numberOfSubs = this.user.userSubs.length;
+      this.numberOfTaps = this.user.userTaps.length;
+    });
   }
+
+
 
 }

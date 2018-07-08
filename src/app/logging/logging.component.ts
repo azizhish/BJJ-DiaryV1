@@ -4,7 +4,7 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 
-import { SubmissionGroup } from "../../shared/submission";
+import { Submission, SubmissionGroup } from "../../shared/submission";
 import { TapGroups } from "../../shared/tapout";
 import { UserService } from '../services/user.service';
 import { User } from '../../shared/user';
@@ -22,10 +22,10 @@ export class LoggingComponent implements OnInit {
 
   tapForm: FormGroup;
   taps;
-
   user: User;
+  usercopy = null;
 
-  constructor(private submissionFB : FormBuilder, 
+  constructor(private submissionFB: FormBuilder,
     private tapFB: FormBuilder,
     private route: ActivatedRoute,
     private userservice: UserService) {
@@ -51,20 +51,51 @@ export class LoggingComponent implements OnInit {
     this.route.paramMap.pipe(
       switchMap((params: ParamMap) =>
         this.userservice.getUser(parseInt(params.get('id'))))
-    ).subscribe(user => 
-      {this.user = user;
-      console.log(this.user);}
+    ).subscribe(user => {
+      this.usercopy = user;
+    }
     );
-    
+
   }
 
-  onSubmitSub(){
-    console.log("Sub");
+  onSubmitSub() {
+    let date = new Date();
+    let temp = this.subForm.value.subName;
+    let sub = {
+      subName: temp,
+      date: date
+    };
+    let counter = this.subForm.value.number;
+    while (counter > 0) {
+      this.usercopy.userSubs.push(sub);
+      this.usercopy.save().
+        subscribe(user => {
+          this.user = user;
+        })
+      counter--;
+    }
+    this.subForm.reset();
+    this.subForm.markAsUntouched();
   }
 
-  onSubmitTap(){
-    console.log("Tap");
+  onSubmitTap() {
+    let date = new Date();
+    let temp = this.tapForm.value.tapName;
+    let tap = {
+      tapName: temp,
+      date: date
+    };
+    let counter = this.tapForm.value.number;
+    while (counter > 0) {
+      this.usercopy.userTaps.push(tap);
+      this.usercopy.save().
+        subscribe(user => {
+          this.user = user;
+        })
+      counter--;
+    }
+    this.tapForm.reset();
+    this.tapForm.markAsUntouched();
   }
-
 
 }

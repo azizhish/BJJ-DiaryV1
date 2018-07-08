@@ -28,9 +28,9 @@ export class User {
         }
         // console.log("I should get here");
         let tracker = {}, maxCount = 1;
-        let favoriteSub = this.userSubs[0].subname;
+        let favoriteSub = this.userSubs[0].subName;
         this.userSubs.forEach(element => {
-            let subName = element.subname;
+            let subName = element.subName;
             if (subName in tracker) {
                 tracker[subName] += 1;
             }

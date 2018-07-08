@@ -1,5 +1,5 @@
 export interface Submission{
-    subname: string;
+    subName: string;
     date: Date | string;
  }
 

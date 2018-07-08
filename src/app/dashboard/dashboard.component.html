@@ -6,17 +6,17 @@
     <div fxLayout="row" fxLayoutAlign="space-evenly center">
       <mat-card fxFlex="35">
         <mat-card-title>  
-          User: {{user?.firstName}}
+          User: {{user?.firstName}} {{user?.lastName}} 
         </mat-card-title>
         <mat-card-subtitle>
           Details about the BJJ player
         </mat-card-subtitle>
         <mat-card-content>
           <div class="card-row">
-          Total Career Submissions: 45
+          Total Career Submissions: {{numberOfSubs}}
           </div>
           <div class="card-row">
-          Total Career Taps: 30
+          Total Career Taps: {{numberOfTaps}}
           </div>
           <div class="card-row">
             Favourite Submission: {{favoriteSub}}
