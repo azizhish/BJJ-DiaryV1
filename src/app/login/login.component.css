@@ -1,0 +1,35 @@
+.login-card {
+    margin-top: 100px;
+    padding-top: 60px;
+}
+  
+  .example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+    /* min-height: 220px; */
+  }
+  
+  .example-full-width {
+    width: 60%;
+  }
+
+  .checkbox {
+    font-size: 12px;
+  }
+
+  .submission {
+    flex: 1 1 auto;
+    padding: 20px 0px 0px 20px;
+  }
+
+  .signup {
+    font-size: 14px;
+    flex: 1 1 auto;
+    /* margin-right: 10px; */
+    /* margin-bottom: 10px; */
+    padding: 0px 10px 10px 10px;
+  }
+
+
+  

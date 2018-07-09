@@ -11,7 +11,7 @@ export class User {
     userTaps: Tapout[];
 
     public constructor(userID: number, firstName: string, lastName: string, userName: string, userPass: string,
-        userSubs: Submission[],userTaps: Tapout[]) {
+        userSubs: Submission[], userTaps: Tapout[]) {
         this.userID = userID;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -19,14 +19,13 @@ export class User {
         this.userPass = userPass;
         this.userSubs = userSubs;
         this.userTaps = userTaps;
-     }
+    }
 
 
     public getFavoriteSub(): string {
         if (this.userSubs.length < 1) {
             return '';
         }
-        // console.log("I should get here");
         let tracker = {}, maxCount = 1;
         let favoriteSub = this.userSubs[0].subName;
         this.userSubs.forEach(element => {
@@ -42,17 +41,7 @@ export class User {
                 favoriteSub = subName;
             }
         });
-        console.log(favoriteSub);
         return favoriteSub;
     }
-    
-    /**
-     * reskv
-    console.log("helter");     */
-    public reskv() {
-        console.log("helter");    
-    }
-
-    
 }
 

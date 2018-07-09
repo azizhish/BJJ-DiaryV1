@@ -11,3 +11,7 @@
     /* margin-top: 24px;
     overflow: visible; */
 }
+
+.spacer {
+    flex: 1 1 auto;
+  }

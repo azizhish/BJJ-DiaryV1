@@ -1,6 +1,6 @@
 <div class="mat-background-primary">
   <div class="container">
-    <div fxLayout="row" fxLayoutAlign="space-evenly center">
+    <div fxLayout="row" fxLayoutAlign="space-evenly center" class="row-content">
       <mat-card fxFlex="35">
         <mat-card-title>
           Input Today's Submissions
@@ -35,7 +35,7 @@
             <form [formGroup]="tapForm" (ngSubmit)="onSubmitTap()">
                 <div class="form-group">
                   <mat-form-field>
-                    <mat-select placeholder="Tap Name" formControlName="tapName">
+                    <mat-select placeholder="Submission Name" formControlName="tapName">
                       <mat-option *ngFor="let tap of taps" [value]="tap.value">
                         {{tap.viewValue}}
                       </mat-option>

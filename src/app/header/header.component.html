@@ -2,14 +2,22 @@
     <mat-toolbar role="heading" color="primary">
         <mat-toolbar-row>
             <span class="logo">BJJ Diary</span>
-            <span>
-                <button mat-button (click)="toDash()">
-                    Dashboard
-                </button>
-            </span>
-            <span>
-                <button mat-button (click)="toLogger()">Logging Tool</button>
-            </span>
+            <div *ngIf="isLoggedIn$ | async">
+                <span>
+                    <button mat-button (click)="toDash()">
+                        Dashboard
+                    </button>
+                </span>
+                <span>
+                    <button mat-button (click)="toLogger()">
+                        Logging Tool
+                    </button>
+                </span>
+            </div>
+            <span class="spacer"></span>
+            <button mat-button (click)="logout" *ngIf="isLoggedIn$ | async">
+                <mat-icon>exit_to_app</mat-icon>
+            </button>
         </mat-toolbar-row>
     </mat-toolbar>
 </div>

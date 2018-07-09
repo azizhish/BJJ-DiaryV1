@@ -1,0 +1,33 @@
+<div fxLayout="column" fxLayoutAlign="center center" fxLayout.xs="column">
+  <mat-card class="login-card">
+    <mat-card-title>Login</mat-card-title>
+    <form class="example-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Username" formControlName="userName">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Password" type="password" formControlName="password">
+      </mat-form-field>
+
+      <div class="formGroup checkbox">
+        <mat-checkbox formControlName="remember">Remember me!</mat-checkbox>
+      </div>
+
+      <mat-card-actions>
+        <div class="submission">
+          <button mat-raised-button type="submit" color="primary">Login</button>
+        </div>
+      </mat-card-actions>
+
+      <mat-card-footer>
+        <div class="signup" align="end">
+          Don't have any account? <a mat-button routerLink=".">Sign Up!</a>
+        </div>
+      </mat-card-footer>
+
+
+    </form>
+
+  </mat-card>
+</div>
