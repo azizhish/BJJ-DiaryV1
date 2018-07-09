@@ -1,6 +1,6 @@
 {
   "master": {
-    "id": 7
+    "id": 3
   },
   "users": [
     {
@@ -9,203 +9,18 @@
       "lastName": "Aziz",
       "userName": "shammer",
       "userPass": "shammer",
-      "userSubs": [
-        {
-          "subName": "Triangle",
-          "date": "2018-05-07T13:02:23.447Z"
-        },
-        {
-          "subName": "Kimora",
-          "date": "2018-05-10T15:25:54.546Z"
-        },
-        {
-          "subName": "Triangle",
-          "date": "2018-05-10T15:58:12.052Z"
-        },
-        {
-          "subName": "Armbar",
-          "date": "2018-05-16T16:42:53.562Z"
-        },
-        {
-          "subName": "Armbar",
-          "date": "2018-05-16T16:42:53.562Z"
-        },
-        {
-          "subName": "Armbar",
-          "date": "2018-05-16T16:42:53.562Z"
-        },
-        {
-          "subName": "Armbar",
-          "date": "2018-05-16T16:42:53.562Z"
-        },
-        {
-          "subName": "Kimora",
-          "date": "2018-06-07T15:08:23.159Z"
-        },
-        {
-          "subName": "Kimora",
-          "date": "2018-06-07T15:08:23.159Z"
-        },
-        {
-          "subName": "Triangle",
-          "date": "2018-06-07T15:08:39.023Z"
-        },
-        {
-          "subName": "Triangle",
-          "date": "2018-06-07T15:08:39.023Z"
-        },
-        {
-          "subName": "Triangle",
-          "date": "2018-06-07T15:08:39.023Z"
-        },
-        {
-          "subName": "Triangle",
-          "date": "2018-06-07T15:08:39.023Z"
-        },
-        {
-          "subName": "Triangle",
-          "date": "2018-06-07T15:08:39.023Z"
-        },
-        {
-          "subName": "Triangle",
-          "date": "2018-06-11T20:34:47.486Z"
-        },
-        {
-          "subName": "Kimora",
-          "date": "2018-06-16T10:52:51.531Z"
-        },
-        {
-          "subName": "Kimora",
-          "date": "2018-06-16T10:52:51.531Z"
-        },
-        {
-          "subName": "Kimora",
-          "date": "2018-06-16T10:52:51.531Z"
-        },
-        {
-          "subName": "Armbar",
-          "date": "2018-06-16T10:53:39.273Z"
-        },
-        {
-          "subName": "Armbar",
-          "date": "2018-06-16T10:53:39.273Z"
-        },
-        {
-          "subName": "Armbar",
-          "date": "2018-06-16T10:53:39.273Z"
-        },
-        {
-          "subName": "Armbar",
-          "date": "2018-06-16T10:53:39.273Z"
-        },
-        {
-          "subName": "Armbar",
-          "date": "2018-06-16T10:53:39.273Z"
-        }
-      ],
+      "userSubs": [],
       "userTaps": []
     },
     {
       "id": 2,
-      "firstName": "zaen",
-      "lastName": "zaen",
+      "firstName": "Zaen",
+      "lastName": "Zaen",
       "userName": "zaen",
       "userPass": "shammer",
-      "userSubs": [
-        {
-          "subName": "Triangle",
-          "date": "2018-05-11T11:05:25.090Z"
-        },
-        {
-          "subName": "Kimora",
-          "date": "2018-05-11T11:05:39.280Z"
-        },
-        {
-          "subName": "Triangle",
-          "date": "2018-05-11T11:06:28.435Z"
-        },
-        {
-          "subName": "Kimora",
-          "date": "Sun Jul 08 2018 15:31:06 GMT+0400 (Gulf Standard Time)"
-        },
-        {
-          "subName": "Armbar",
-          "date": "2018-07-08T11:34:49.057Z"
-        },
-        {
-          "subName": "Triangle",
-          "date": "2018-07-08T11:48:57.929Z"
-        },
-        {
-          "subName": "Triangle",
-          "date": "2018-07-08T11:48:57.929Z"
-        },
-        {
-          "subName": "Kimora",
-          "date": "2018-07-08T11:55:43.348Z"
-        },
-        {
-          "subName": "Kimora",
-          "date": "2018-07-08T11:55:43.348Z"
-        },
-        {
-          "subName": "Armbar",
-          "date": "2018-07-08T11:57:35.819Z"
-        },
-        {
-          "subName": "Armbar",
-          "date": "2018-07-08T11:58:52.032Z"
-        },
-        {
-          "subName": "Kimora",
-          "date": "2018-07-08T12:00:08.780Z"
-        },
-        {
-          "subName": "Kimora",
-          "date": "2018-07-08T12:00:08.780Z"
-        },
-        {
-          "subName": "Kimora",
-          "date": "2018-07-08T12:00:08.780Z"
-        },
-        {
-          "subName": "Kimora",
-          "date": "2018-07-08T12:00:08.780Z"
-        }
-      ],
-      "userTaps": [
-        {
-          "tapName": "Kimora",
-          "date": "2018-07-09T05:34:18.278Z"
-        }
-      ]
-    },
-    {
-      "id": 4,
-      "firstName": "t1",
-      "lastName": "t1",
-      "userName": "t1",
-      "userPass": "t1",
-      "userSubs": [],
-      "userTaps": []
-    },
-    {
-      "id": 5,
-      "firstName": "t1",
-      "lastName": "t1",
-      "userName": "t2",
-      "userPass": "t2",
-      "userSubs": [],
-      "userTaps": []
-    },
-    {
-      "id": 6,
-      "firstName": "Morty",
-      "lastName": "Jones",
-      "userName": "shammer",
-      "userPass": "tester",
       "userSubs": [],
       "userTaps": []
     }
+    
   ]
 }
