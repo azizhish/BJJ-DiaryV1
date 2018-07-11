@@ -18,9 +18,17 @@
       "lastName": "Zaen",
       "userName": "zaen",
       "userPass": "shammer",
-      "userSubs": [],
+      "userSubs": [
+        {
+          "subName": "Triangle",
+          "date": "2018-07-09T17:20:43.997Z"
+        },
+        {
+          "subName": "Triangle",
+          "date": "2018-07-09T17:20:43.997Z"
+        }
+      ],
       "userTaps": []
     }
-    
   ]
 }

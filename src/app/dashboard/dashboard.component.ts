@@ -23,7 +23,7 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
     this.route.paramMap.pipe(
       switchMap((params: ParamMap) =>
-        this.userservice.getUser(parseInt(params.get('id'))))
+        this.userservice.getUserWithID(parseInt(params.get('id'))))
     ).subscribe(user => {
       this.user = new User(user.userID, user.firstName, user.lastName,
         user.userName, user.userPass, user.userSubs, user.userTaps);

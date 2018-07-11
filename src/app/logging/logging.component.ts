@@ -50,7 +50,7 @@ export class LoggingComponent implements OnInit {
     //Route Params to get the User and store it as any so it remains RestAngular object
     this.route.paramMap.pipe(
       switchMap((params: ParamMap) =>
-        this.userservice.getUser(parseInt(params.get('id'))))
+        this.userservice.getUserWithID(parseInt(params.get('id'))))
     ).subscribe(user => {
       this.usercopy = user;
     }

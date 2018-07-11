@@ -15,7 +15,7 @@
                 </span>
             </div>
             <span class="spacer"></span>
-            <button mat-button (click)="logout" *ngIf="isLoggedIn$ | async">
+            <button mat-button (click)="logout()" *ngIf="isLoggedIn$ | async">
                 <mat-icon>exit_to_app</mat-icon>
             </button>
         </mat-toolbar-row>
