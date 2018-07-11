@@ -17,6 +17,7 @@
       "firstName": "Zaen",
       "lastName": "Zaen",
       "userName": "zaen",
+<<<<<<< HEAD
       "userPass": "shammer",
       "userSubs": [
         {
@@ -28,6 +29,10 @@
           "date": "2018-07-09T17:20:43.997Z"
         }
       ],
+=======
+      "userPass": "hamid",
+      "userSubs": [],
+>>>>>>> b53849b0e16e10c3fc403a955040f64ac230f81d
       "userTaps": []
     }
   ]

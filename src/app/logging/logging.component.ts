@@ -1,49 +1,48 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { ActivatedRoute, ParamMap } from '@angular/router';
-import { Observable } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
-
-import { Submission, SubmissionGroup } from "../../shared/submission";
-import { TapGroups } from "../../shared/tapout";
-import { UserService } from '../services/user.service';
-import { User } from '../../shared/user';
+import { Component, OnInit } from '@angular/core'
+import { FormBuilder, FormGroup, Validators } from '@angular/forms'
+import { ActivatedRoute, ParamMap } from '@angular/router'
+import { switchMap } from 'rxjs/operators'
+import { SubmissionGroup } from '../../shared/submission'
+import { TapGroups } from '../../shared/tapout'
+import { User } from '../../shared/user'
+import { UserService } from '../services/user.service'
 
 @Component({
   selector: 'app-logging',
   templateUrl: './logging.component.html',
-  styleUrls: ['./logging.component.css']
+  styleUrls: ['./logging.component.css'],
 })
 export class LoggingComponent implements OnInit {
+  subForm: FormGroup
+  subs
 
+  tapForm: FormGroup
+  taps
+  user: User
+  usercopy = null
 
-  subForm: FormGroup;
-  subs;
-
-  tapForm: FormGroup;
-  taps;
-  user: User;
-  usercopy = null;
-
-  constructor(private submissionFB: FormBuilder,
+  constructor(
+    private submissionFB: FormBuilder,
     private tapFB: FormBuilder,
     private route: ActivatedRoute,
-    private userservice: UserService) {
-    this.createForms();
+    private userservice: UserService
+  ) {
+    this.createForms()
   }
 
   createForms(): any {
     this.subForm = this.submissionFB.group({
       subName: ['', Validators.required],
-      number: 1
-    });
+      number: 1,
+    })
     this.tapForm = this.tapFB.group({
       tapName: ['', Validators.required],
-      number: 1
-    });
+      number: 1,
+    })
   }
 
   ngOnInit() {
+<<<<<<< HEAD
     this.subs = SubmissionGroup.subs;
     this.taps = TapGroups.taps;
 
@@ -55,47 +54,59 @@ export class LoggingComponent implements OnInit {
       this.usercopy = user;
     }
     );
+=======
+    this.subs = SubmissionGroup.subs
+    this.taps = TapGroups.taps
+>>>>>>> b53849b0e16e10c3fc403a955040f64ac230f81d
 
+    // Route Params to get the User and store it as any so it remains RestAngular object
+    this.route.paramMap
+      .pipe(
+        switchMap((params: ParamMap) =>
+          // tslint:disable-next-line:radix
+          this.userservice.getUserWithID(parseInt(params.get('id')))
+        )
+      )
+      .subscribe(user => {
+        this.usercopy = user
+      })
   }
 
   onSubmitSub() {
-    let date = new Date();
-    let temp = this.subForm.value.subName;
-    let sub = {
+    const date = new Date()
+    const temp = this.subForm.value.subName
+    const sub = {
       subName: temp,
-      date: date
-    };
-    let counter = this.subForm.value.number;
-    while (counter > 0) {
-      this.usercopy.userSubs.push(sub);
-      this.usercopy.save().
-        subscribe(user => {
-          this.user = user;
-        })
-      counter--;
+      date: date,
     }
-    this.subForm.reset();
-    this.subForm.markAsUntouched();
+    let counter = this.subForm.value.number
+    while (counter > 0) {
+      this.usercopy.userSubs.push(sub)
+      this.usercopy.save().subscribe(user => {
+        this.user = user
+      })
+      counter--
+    }
+    this.subForm.reset()
+    this.subForm.markAsUntouched()
   }
 
   onSubmitTap() {
-    let date = new Date();
-    let temp = this.tapForm.value.tapName;
-    let tap = {
+    const date = new Date()
+    const temp = this.tapForm.value.tapName
+    const tap = {
       tapName: temp,
-      date: date
-    };
-    let counter = this.tapForm.value.number;
-    while (counter > 0) {
-      this.usercopy.userTaps.push(tap);
-      this.usercopy.save().
-        subscribe(user => {
-          this.user = user;
-        })
-      counter--;
+      date: date,
     }
-    this.tapForm.reset();
-    this.tapForm.markAsUntouched();
+    let counter = this.tapForm.value.number
+    while (counter > 0) {
+      this.usercopy.userTaps.push(tap)
+      this.usercopy.save().subscribe(user => {
+        this.user = user
+      })
+      counter--
+    }
+    this.tapForm.reset()
+    this.tapForm.markAsUntouched()
   }
-
 }
