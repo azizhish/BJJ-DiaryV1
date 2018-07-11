@@ -42,22 +42,8 @@ export class LoggingComponent implements OnInit {
   }
 
   ngOnInit() {
-<<<<<<< HEAD
-    this.subs = SubmissionGroup.subs;
-    this.taps = TapGroups.taps;
-
-    //Route Params to get the User and store it as any so it remains RestAngular object
-    this.route.paramMap.pipe(
-      switchMap((params: ParamMap) =>
-        this.userservice.getUserWithID(parseInt(params.get('id'))))
-    ).subscribe(user => {
-      this.usercopy = user;
-    }
-    );
-=======
     this.subs = SubmissionGroup.subs
     this.taps = TapGroups.taps
->>>>>>> b53849b0e16e10c3fc403a955040f64ac230f81d
 
     // Route Params to get the User and store it as any so it remains RestAngular object
     this.route.paramMap

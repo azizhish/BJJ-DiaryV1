@@ -24,7 +24,8 @@ export class LoginComponent implements OnInit {
       password: ['', Validators.required],
       remember: false,
     })
-    this.userservice.getUserWithID(2).subscribe(user => console.log(user.userPass))
+    this.userservice.getUserWithUsername('s')
+      .subscribe(dish => console.log(dish))
   }
 
   onSubmit() {
