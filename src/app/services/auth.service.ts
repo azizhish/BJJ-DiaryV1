@@ -13,7 +13,7 @@ export class AuthService {
   login(username: string, password: string) {
     if (username !== '' && password !== '') {
       this.loggedIn.next(true)
-      this.router.navigate(['/dashboard', '2'])
+      // this.router.navigate(['/dashboard', '2'])
     }
   }
 

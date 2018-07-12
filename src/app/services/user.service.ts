@@ -20,8 +20,12 @@ export class UserService {
   //     .pipe(map(data => console.log(data.userName))
   // }
 
-  private filterByUser(allUsers: any[], userName: string) {
-    return allUsers.filter(user => user.userName === userName)
+  filterByUser(userName: string): Observable<boolean> {
+    return (
+      this.getAllUsers().subscribe(data =>
+        data.filter(user => user.userName === userName)
+      ).length === 1
+    ).asObservable
   }
 
   getAllUsers() {

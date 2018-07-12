@@ -24,13 +24,12 @@ export class LoginComponent implements OnInit {
       password: ['', Validators.required],
       remember: false,
     })
-    this.userservice.getUserWithID(2).subscribe(user => console.log(user.userPass))
   }
 
   onSubmit() {
-    console.log('we get here')
     if (this.loginForm.valid) {
       this.authservice.login(this.loginForm.value.userName, this.loginForm.value.password)
+      console.log(this.userservice.filterByUser(this.loginForm.value.userName))
     }
     this.formSubmitAttempt = true
   }
