@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
+import { Router } from '@angular/router'
+import { MatDialog } from '../../../node_modules/@angular/material'
 import { AuthService } from '../services/auth.service'
-import { UserService } from '../services/user.service'
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private authservice: AuthService,
-    private userservice: UserService
+    private router: Router,
+    public dialog: MatDialog
   ) {}
 
   ngOnInit() {
@@ -29,9 +31,13 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     if (this.loginForm.valid) {
-      this.authservice.login(this.loginForm.value.userName, this.loginForm.value.password)
-      console.log(this.userservice.filterByUser(this.loginForm.value.userName))
+      this.authservice
+        .login(this.loginForm.value.userName, this.loginForm.value.password)
+        .subscribe(userID => {
+          if (userID > 0) {
+            this.router.navigate(['/dashboard', userID])
+          }
+        })
     }
-    this.formSubmitAttempt = true
   }
 }

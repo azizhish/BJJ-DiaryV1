@@ -1,17 +1,17 @@
-import { Submission } from "./submission";
-import { Tapout } from "./tapout";
+import { Submission } from './submission'
+import { Tapout } from './tapout'
 
 export class User {
-  userID: number;
-  firstName: string;
-  lastName: string;
-  userName: string;
-  userPass: string;
-  userSubs: Submission[];
-  userTaps: Tapout[];
+  id: number
+  firstName: string
+  lastName: string
+  userName: string
+  userPass: string
+  userSubs: Submission[]
+  userTaps: Tapout[]
 
   public constructor(
-    userID: number,
+    id: number,
     firstName: string,
     lastName: string,
     userName: string,
@@ -19,34 +19,34 @@ export class User {
     userSubs: Submission[],
     userTaps: Tapout[]
   ) {
-    this.userID = userID;
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.userName = userName;
-    this.userPass = userPass;
-    this.userSubs = userSubs;
-    this.userTaps = userTaps;
+    this.id = id
+    this.firstName = firstName
+    this.lastName = lastName
+    this.userName = userName
+    this.userPass = userPass
+    this.userSubs = userSubs
+    this.userTaps = userTaps
   }
 
   public getFavoriteSub(): string {
     if (this.userSubs.length < 1) {
-      return "";
+      return ''
     }
-    let tracker = {},
-      maxCount = 1;
-    let favoriteSub = this.userSubs[0].subName;
+    const tracker = {}
+    let maxCount = 1
+    let favoriteSub = this.userSubs[0].subName
     this.userSubs.forEach(element => {
-      let subName = element.subName;
+      const subName = element.subName
       if (subName in tracker) {
-        tracker[subName] += 1;
+        tracker[subName] += 1
       } else {
-        tracker[subName] = 1;
+        tracker[subName] = 1
       }
       if (tracker[subName] > maxCount) {
-        maxCount = tracker[subName];
-        favoriteSub = subName;
+        maxCount = tracker[subName]
+        favoriteSub = subName
       }
-    });
-    return favoriteSub;
+    })
+    return favoriteSub
   }
 }

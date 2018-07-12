@@ -10,6 +10,13 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
+  "prettier": {
+    "printWidth": 90,
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "parser": "typescript"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "^6.0.6",

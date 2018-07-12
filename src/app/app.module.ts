@@ -1,41 +1,39 @@
-import { BrowserModule } from "@angular/platform-browser";
-import { NgModule } from "@angular/core";
-import { AppRoutingModule } from "./app-routing/app-routing.module";
-
-import { FlexLayoutModule } from "@angular/flex-layout";
-
-import { AppComponent } from "./app.component";
-import { DashboardComponent } from "./dashboard/dashboard.component";
-import { HeaderComponent } from "./header/header.component";
-import { LoggingComponent } from "./logging/logging.component";
-import { LoginComponent } from "./login/login.component";
-import { RegisterComponent } from "./register/register.component";
-
+import { NgModule } from '@angular/core'
+import { FlexLayoutModule } from '@angular/flex-layout'
+import { ReactiveFormsModule } from '@angular/forms'
 import {
-  MatCardModule,
-  MatToolbarModule,
   MatButtonModule,
+  MatCardModule,
+  MatCheckboxModule,
+  MatDialogModule,
+  MatIconModule,
+  MatInputModule,
   MatMenuModule,
   MatSelectModule,
   MatSliderModule,
-  MatCheckboxModule,
-  MatInputModule,
-  MatIconModule
-} from "@angular/material";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { ReactiveFormsModule } from "@angular/forms";
-//NGX Imports
-import { RestangularModule } from "ngx-restangular";
-
-import { UserService } from "./services/user.service";
-import { AuthService } from "./services/auth.service";
+  MatToolbarModule,
+} from '@angular/material'
+import { BrowserModule } from '@angular/platform-browser'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+// NGX Imports
+import { RestangularModule } from 'ngx-restangular'
+import { AppRoutingModule } from './app-routing/app-routing.module'
+import { AppComponent } from './app.component'
+import { DashboardComponent } from './dashboard/dashboard.component'
+import { HeaderComponent } from './header/header.component'
+import { LoggingComponent } from './logging/logging.component'
+import { LoginDialogComponent } from './login-dialog/login-dialog.component'
+import { LoginComponent } from './login/login.component'
+import { RegisterComponent } from './register/register.component'
+import { AuthService } from './services/auth.service'
+import { UserService } from './services/user.service'
 
 export function RestangularConfigFactory(RestangularProvider) {
-  RestangularProvider.setBaseUrl("http://localhost:3000/");
+  RestangularProvider.setBaseUrl('http://localhost:3000/')
 }
-//json-server --watch db.json
+// json-server --watch db.json
 
-export { User } from "../shared/user";
+export { User } from '../shared/user'
 
 @NgModule({
   declarations: [
@@ -45,7 +43,8 @@ export { User } from "../shared/user";
     LoggingComponent,
     LoginComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    LoginDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,15 +57,17 @@ export { User } from "../shared/user";
       MatSliderModule,
       MatCheckboxModule,
       MatInputModule,
-      MatIconModule
+      MatIconModule,
+      MatDialogModule,
     ],
     BrowserAnimationsModule,
     FlexLayoutModule,
     RestangularModule.forRoot(RestangularConfigFactory),
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
+  entryComponents: [LoginDialogComponent],
   providers: [UserService, AuthService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
