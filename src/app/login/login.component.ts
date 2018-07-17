@@ -36,6 +36,8 @@ export class LoginComponent implements OnInit {
         .subscribe(userID => {
           if (userID > 0) {
             this.router.navigate(['/dashboard', userID])
+          } else {
+            this.formSubmitAttempt = true
           }
         })
     }
