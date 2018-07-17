@@ -1,7 +1,17 @@
 import { Submission } from './submission'
 import { Tapout } from './tapout'
 
-export class User {
+export interface IUser {
+  id: number
+  firstName: string
+  lastName: string
+  userName: string
+  userPass: string
+  userSubs: Submission[]
+  userTaps: Tapout[]
+}
+
+export class User implements IUser {
   id: number
   firstName: string
   lastName: string

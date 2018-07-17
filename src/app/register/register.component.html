@@ -1,4 +1,4 @@
-<div class="container mat-app-background">
+<div fxLayout="column" fxLayoutAlign="left left" fxLayout.xs="column">
 
   <mat-card>
     <mat-card-title>
@@ -7,27 +7,33 @@
     <mat-card-subtitle>
       Enter your details here to begin tracking your BJJ stats!!
     </mat-card-subtitle>
-    <mat-card-content>
 
-      <form [formGroup]="registerForm">
-        <div class="reg">
-          <mat-form-field>
-            <input matInput placeholder="First Name" type="text" class="form-control" id="fname" required formControlName="fname" name="fname">
-          </mat-form-field>
-          <mat-form-field>
-            <input matInput placeholder="Last Name" type="text" class="form-control" id="lname" required formControlName="lname" name="lname">
-          </mat-form-field>
-          <mat-form-field>
-            <input matInput placeholder="Username" type="text" class="form-control" id="uname" required formControlName="uname" name="uname">
-          </mat-form-field>
-          <mat-form-field>
-            <input matInput placeholder="Password" type="password" class="form-control" id="pass" required formControlName="pass" name="pass">
-          </mat-form-field>
-        </div>
-        <button mat-button type="submit" name="submit">Submit</button>
-        <!-- Thanks to the above router link -->
-      </form>
-    </mat-card-content>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="First Name" type="text" class="form-control" id="fname" formControlName="firstName" name="fname">
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="Last Name" type="text" class="form-control" id="lname" formControlName="lastName" name="lname">
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="Username" type="text" class="form-control" id="uname" formControlName="userName" name="uname">
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="Password" type="password" class="form-control" id="pass" formControlName="userPass" name="pass">
+        </mat-form-field>
+      </div>
+
+      <button mat-button type="submit">Submit</button>
+      <!-- Thanks to the above router link -->
+    </form>
+
   </mat-card>
 
 

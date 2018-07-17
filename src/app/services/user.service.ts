@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core'
 import { Restangular } from 'ngx-restangular'
 import { BehaviorSubject, Observable } from 'rxjs'
 import { map } from '../../../node_modules/rxjs/operators'
-import { User } from '../../shared/user'
+import { User, IUser } from '../../shared/user'
 
 @Injectable({
   providedIn: 'root',
@@ -27,5 +27,14 @@ within the Database  */
 
   getAllUsers(): Observable<User[]> {
     return this.restangular.all('users').getList()
+  }
+
+  addUser(user: IUser) {
+    let master = this.restangular
+      .all('master')
+      .all()
+      .getList()
+      .pipe(map(id => id[0])
+    //this.restangular.all('users').post(user)
   }
 }
